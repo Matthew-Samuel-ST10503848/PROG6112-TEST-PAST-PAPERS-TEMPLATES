@@ -1,0 +1,120 @@
+PROG6112 EXAM QUICK REFERENCE
+
+========================
+QUESTION 1: ARRAY REPORT
+========================
+
+1D ARRAY
+String[] names = {"A", "B", "C"};
+
+2D ARRAY
+int[][] values = new int[names.length][2];
+
+INPUT
+for (int i = 0; i < names.length; i++) {
+    values[i][0] = input.nextInt();
+    values[i][1] = input.nextInt();
+}
+
+DISPLAY
+for (int i = 0; i < names.length; i++) {
+    System.out.println(
+        names[i] + " " + values[i][0] + " " + values[i][1]
+    );
+}
+
+TOTAL
+int total = values[i][0] + values[i][1];
+
+HIGHEST
+int highestTotal = -1;
+int highestIndex = 0;
+
+if (total > highestTotal) {
+    highestTotal = total;
+    highestIndex = i;
+}
+
+========================
+QUESTION 2: OOP REPORT
+========================
+
+INTERFACE
+public interface IExample {
+    String getName();
+    int getValue();
+}
+
+ABSTRACT CLASS
+public abstract class Example
+        implements IExample {
+
+    private String name;
+    private int value;
+
+    public Example(String name, int value) {
+        this.name = name;
+        this.value = value;
+    }
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public int getValue() {
+        return value;
+    }
+}
+
+SUBCLASS
+public class ExampleReport extends Example {
+
+    public ExampleReport(String name, int value) {
+        super(name, value);
+    }
+
+    public void printReport() {
+        System.out.println("Name: " + getName());
+        System.out.println("Value: " + getValue());
+    }
+}
+
+MAIN
+public class RunApplication {
+
+    public static void main(String[] args) {
+
+        ExampleReport report =
+                new ExampleReport("Example", 100);
+
+        report.printReport();
+    }
+}
+
+========================
+KEY WORDS TO REMEMBER
+========================
+
+implements = class follows an interface
+extends = class inherits from another class
+super(...) = calls the parent constructor
+this.variable = object's own variable
+@Override = method is implementing/overriding a parent/interface method
+new = creates an object
+get(i) = gets an ArrayList value
+size() = number of ArrayList elements
+length = number of array elements
+
+========================
+IF YOU GET STUCK
+========================
+
+Q1:
+Think:
+1D names -> 2D values -> input -> display -> total -> highest
+
+Q2:
+Think:
+interface -> abstract class -> subclass -> super -> report -> main
